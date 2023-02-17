@@ -1,0 +1,120 @@
+@extends('layouts.master')
+@section('content')
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark"> รายละเอียดวัสดุ </h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href=" ">หน้าหลัก</a></li>
+                        <li class="breadcrumb-item active">รายการวัสดุ</li>
+                    </ol>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card card-primary card-outline">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-12 margin-tb">
+                                    <div class="pull-left">
+                                        <div class="pull-right">
+                                            
+                                            <a class="btn btn-secondary" href="{{ route('materials.index') }}"> <i data-feather="arrow-left-circle"></i> ย้อนกลับ
+                                            </a><br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <strong>รหัสวัสดุ:</strong>
+                                        {{ $material->mateID }}
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <strong>รายการ:</strong>
+                                        {{ $material->mateName }}
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <strong>หมวดหมู่วัสดุ:</strong>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <strong>จำนวนคงเหลือ:</strong>
+                                        {{ $material->mateAmount }}
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <strong>หน่วยนับ:</strong>
+                                        {{ $material->mateUnit }}
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <strong>ราคาต่อหน่วย:</strong>
+                                        {{ $material->matePrice }}
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <strong>สถานะ:</strong>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <strong>รายละเอียดวัสดุ:</strong>
+                                        {{ $material->mateDetail }}
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <strong>วันที่เพิ่ม:</strong>
+                                        {{ $material->created_at}}
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <strong>รูปภาพ:</strong>
+                                        <img src="/mateImage/{{ $material->mateImage }}" width="300px">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div> <!-- /.card-body -->
+                    </div>
+                    <!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content -->
+        </div>
+    </div>
+
+@endsection
